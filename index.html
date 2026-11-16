@@ -1806,5 +1806,89 @@
       });
     })();
   </script>
+  <script>
+    /* Feedback form.
+       Set FEEDBACK_ENDPOINT to a Formspree / Web3Forms URL to get messages by email.
+       Left empty, the form opens a pre-filled GitHub issue instead (needs a free GitHub login). */
+    (function () {
+      'use strict';
+      const FEEDBACK_ENDPOINT = '';
+      const REPOS = {
+        'general': 'Socialmania99/Copyit',
+        'copyit': 'Socialmania99/Copyit',
+        'archiv-ai': 'Socialmania99/archiv-ai',
+        'click-automator-pro': 'Socialmania99/Click-Automator-Pro',
+      };
+
+      const form = document.getElementById('feedback-form');
+      if (!form) return;
+      const $ = (id) => document.getElementById(id);
+      const status = $('fb-status');
+      const btn = $('fb-submit');
+
+      function say(msg, ok) {
+        status.textContent = msg;
+        status.style.color = ok === false ? '#fca5a5' : ok ? '#e5e7eb' : '#d4d4d8';
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = $('fb-name').value.trim();
+        const email = $('fb-email').value.trim();
+        const type = $('fb-type').value;
+        const project = $('fb-project').value;
+        const message = $('fb-message').value.trim();
+
+        $('fb-email').classList.remove('invalid');
+        $('fb-message').classList.remove('invalid');
+
+        if ($('fb-trap').value) { say('Thanks!', true); form.reset(); return; }
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          $('fb-email').classList.add('invalid');
+          say('Email looks wrong.', false);
+          return;
+        }
+        if (message.length < 5) {
+          $('fb-message').classList.add('invalid');
+          say('Please write a short message.', false);
+          return;
+        }
+
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+        setTimeout(() => { btn.disabled = false; btn.style.opacity = ''; }, 5000);
+
+        const projectLabel = $('fb-project').selectedOptions[0].textContent;
+
+        if (FEEDBACK_ENDPOINT) {
+          say('Sending...');
+          try {
+            const res = await fetch(FEEDBACK_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+              body: JSON.stringify({ name, email, type, project: projectLabel, message }),
+            });
+            if (!res.ok) throw new Error('bad status ' + res.status);
+            say('Sent. Thank you!', true);
+            form.reset();
+          } catch (err) {
+            say('Could not send. Please try again later.', false);
+          }
+          return;
+        }
+
+        // Fallback: pre-filled GitHub issue
+        const title = '[' + type + '] ' + message.slice(0, 60).replace(/\s+/g, ' ');
+        const body = message.slice(0, 1500) +
+          '\n\n---\nFrom: ' + (name || 'anonymous') +
+          '\nAbout: ' + projectLabel +
+          '\nSent from the Social Mania website';
+        const url = 'https://github.com/' + REPOS[project] + '/issues/new?title=' +
+          encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+        window.open(url, '_blank', 'noopener');
+        say('Opening GitHub to post your message. Just press "Submit new issue".', true);
+      });
+    })();
+  </script>
 </body>
 </html>
