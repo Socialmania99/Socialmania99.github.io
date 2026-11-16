@@ -1,309 +1,1810 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social Mania (Socialmania99) - Developer Portfolio</title>
-<meta name="description" content="Social Mania (Socialmania99): hobby developer who builds small apps in spare time with AI. Creator of Copyit and Archiv AI.">
-<meta property="og:title" content="Social Mania - Developer Portfolio">
-<meta property="og:description" content="Hobby developer. Small apps built in spare time with a little help from AI.">
-<meta property="og:image" content="https://socialmania99.github.io/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://socialmania99.github.io/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://socialmania99.github.io/assets/og-image.png">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#ffffff; --bg2:#f6f7f9; --text:#14171a; --muted:#5f6b76;
-  --line:#e6e9ed; --accent:#2f6df6; --accent-ink:#ffffff; --coffee:#ffdd00; --coffee-ink:#14171a;
-  --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0e1013; --bg2:#15181d; --text:#eef1f4; --muted:#98a3ae;
-    --line:#242932; --accent:#6c9bff; --accent-ink:#0e1013;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0e1013; --bg2:#15181d; --text:#eef1f4; --muted:#98a3ae;
-  --line:#242932; --accent:#6c9bff; --accent-ink:#0e1013;
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-section{padding:84px 0}
-h2.title{font-size:1.9rem;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
-.sub{color:var(--muted);margin-bottom:36px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Mania (Socialmania99) — Developer by Hobby</title>
+  <meta name="description" content="Weekend builder. I turn small ideas into small apps, just for fun. Open source Chrome extensions and developer tools by Social Mania." />
 
-/* nav */
-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;height:62px}
-.logo{font-weight:600;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
-.logo img{width:30px;height:30px;border-radius:50%;object-fit:cover;background:#fff;border:1px solid var(--line)}
-.links{display:flex;gap:26px;align-items:center}
-.links a{color:var(--muted);font-size:.93rem;transition:color .15s}
-.links a:hover{color:var(--text)}
-.icon-btn{border:1px solid var(--line);background:transparent;color:var(--text);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px}
-.icon-btn:hover{background:var(--bg2)}
-@media(max-width:720px){.links a.hide-sm{display:none}.links{gap:16px}}
+  <!-- Google Fonts: Plus Jakarta Sans, Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-/* hero */
-.hero{padding:96px 0 72px;text-align:center}
-.hand{font-family:'Caveat',cursive;font-weight:700;line-height:1.05}
-.avatar{width:132px;height:132px;border-radius:50%;object-fit:cover;background:#fff;border:3px solid var(--line);box-shadow:var(--shadow);margin-bottom:22px;opacity:0;animation:fade .8s ease .1s forwards}
-@media (prefers-reduced-motion: reduce){.avatar{animation:none;opacity:1}}
-.hero .hi{font-size:clamp(2.6rem,7vw,4.6rem);display:inline-block;overflow:hidden;white-space:nowrap;border-right:3px solid var(--accent);width:0;animation:write 1.8s steps(26,end) .3s forwards,blink .7s step-end 5 .3s}
-.hero .role{font-size:clamp(1.7rem,4.2vw,2.5rem);color:var(--accent);margin-top:10px;opacity:0;animation:fade .8s ease 2.2s forwards;transform:rotate(-1.5deg)}
-.hero .tag{font-family:'Caveat',cursive;font-weight:500;font-size:clamp(1.3rem,3vw,1.7rem);color:var(--muted);max-width:640px;margin:18px auto 0;opacity:0;animation:fade .8s ease 2.8s forwards}
-.cta{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fade .8s ease 3.3s forwards}
-@keyframes write{to{width:100%}}
-@keyframes blink{50%{border-color:transparent}}
-@keyframes fade{to{opacity:1}}
-@media (prefers-reduced-motion: reduce){
-  .hero .hi,.hero .role,.hero .tag,.cta{animation:none;opacity:1;width:auto;border:0}
-}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-weight:500;font-size:.95rem;border:1px solid var(--line);transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.btn.ghost:hover{background:var(--bg2)}
-.btn.coffee{background:var(--coffee);color:var(--coffee-ink);border-color:var(--coffee);font-weight:600}
+  <!-- Devicon CDN for crisp language & platform icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-/* about */
-.about{display:block;max-width:720px}
-@media(max-width:820px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin-bottom:16px}
-.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.chip{font-size:.82rem;padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--bg2)}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.stat{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--bg2)}
-.stat b{display:block;font-size:2rem;font-weight:600;letter-spacing:-.02em;color:var(--accent)}
-.stat span{font-size:.85rem;color:var(--muted)}
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-/* projects */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-@media(max-width:820px){.grid{grid-template-columns:1fr}}
-.card{border:1px solid var(--line);border-radius:16px;padding:26px;background:var(--bg);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
-.card:hover{transform:translateY(-3px);border-color:var(--accent)}
-.card .top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:20px;background:var(--bg2);border:1px solid var(--line)}
-.card h3{font-size:1.2rem;font-weight:600;letter-spacing:-.01em}
-.badge{margin-left:auto;font-size:.72rem;padding:3px 10px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);color:var(--muted)}
-.card p.d{color:var(--muted);font-size:.95rem;margin-bottom:14px}
-.card ul{list-style:none;margin-bottom:18px}
-.card li{font-size:.88rem;color:var(--muted);padding-left:18px;position:relative;margin-bottom:4px}
-.card li::before{content:"→";position:absolute;left:0;color:var(--accent)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
-.tags span{font-size:.75rem;padding:3px 10px;border-radius:6px;background:var(--bg2);color:var(--muted);border:1px solid var(--line)}
-.actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
-.actions .btn{padding:8px 14px;font-size:.85rem}
-.more{margin-top:34px}
-.more h4{font-size:1rem;font-weight:600;margin-bottom:14px}
-.mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
-.mini a{border:1px solid var(--line);border-radius:12px;padding:16px;display:block;transition:border-color .2s,background .2s}
-.mini a:hover{border-color:var(--accent);background:var(--bg2)}
-.mini b{display:block;font-size:.95rem;margin-bottom:2px}
-.mini span{font-size:.83rem;color:var(--muted)}
+  <!-- Three.js r128 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-/* skills */
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-@media(max-width:820px){.skills{grid-template-columns:1fr}}
-.sk{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--bg2)}
-.sk h3{font-size:1rem;font-weight:600;margin-bottom:14px}
-.sk .tags{margin:0}
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#050506',
+            carbon: '#0e0f12',
+            graphite: '#181a1f',
+            titanium: '#2c2f36',
+            silverMist: '#9ca3af',
+            chromeWhite: '#f3f4f6',
+          },
+        },
+      },
+    };
+  </script>
 
-.skills{grid-template-columns:repeat(2,1fr)}
-@media(max-width:820px){.skills{grid-template-columns:1fr}}
-.techs{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:12px}
-.tech{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 6px 11px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:transform .2s,border-color .2s,box-shadow .2s}
-.tech:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow)}
-.tech img{width:40px;height:40px;object-fit:contain}
-.tech span{font-size:.74rem;font-weight:500;color:#3a4350;text-align:center;line-height:1.2}
-/* support */
-.support{text-align:center;border:1px dashed var(--line);border-radius:20px;padding:44px 24px;background:var(--bg2)}
-.support .hand{font-size:clamp(2rem,5vw,2.8rem)}
-.support p{color:var(--muted);max-width:520px;margin:10px auto 22px}
+  <style>
+    /* Base Reset & Monochrome Obsidian Canvas */
+    :root {
+      --bg-obsidian: #050506;
+      --bg-carbon: #0e0f12;
+      --bg-graphite: #181a1f;
+      --titanium-border: #2c2f36;
+      --silver-mist: #9ca3af;
+      --chrome-white: #f3f4f6;
+    }
 
-/* contact */
-.contact{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:.88rem}
-</style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background-color: #050506;
+      background-image:
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255, 255, 255, 0.06) 0%, rgba(24, 26, 31, 0.25) 45%, #050506 85%);
+      color: #f3f4f6;
+      font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Monochrome Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050506;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2c2f36;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #71717a;
+    }
+
+    /* Volumetric Studio Silver/Charcoal Rim Lighting & Diagonal Beams */
+    .studio-blur-top {
+      position: fixed;
+      top: -8rem;
+      right: -8rem;
+      width: 38rem;
+      height: 38rem;
+      background: radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.14) 0%, rgba(161, 161, 170, 0.07) 40%, rgba(44, 47, 54, 0.03) 68%, transparent 80%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 1;
+      transform: rotate(-28deg);
+      will-change: transform;
+    }
+
+    .studio-beam-diagonal {
+      position: fixed;
+      top: -18%;
+      right: 10%;
+      width: 32rem;
+      height: 120vh;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.075) 0%, rgba(156, 163, 175, 0.035) 45%, rgba(255, 255, 255, 0.008) 78%, transparent 100%);
+      transform: rotate(-28deg);
+      filter: blur(54px);
+      pointer-events: none;
+      z-index: 1;
+      will-change: transform;
+    }
+
+    .studio-aura-bottom {
+      position: fixed;
+      bottom: -16rem;
+      left: -12rem;
+      width: 36rem;
+      height: 36rem;
+      background: radial-gradient(circle, rgba(212, 212, 216, 0.08) 0%, rgba(63, 63, 70, 0.04) 48%, transparent 75%);
+      filter: blur(85px);
+      pointer-events: none;
+      z-index: 1;
+      will-change: transform;
+    }
+
+    /* Architectural Precision Grid Overlay */
+    .architectural-grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(ellipse 85% 75% at 50% 25%, #000 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 25%, #000 30%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Metallic Chrome Shimmer Pill Badge (.tag-box) */
+    @keyframes metallicShimmer {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .tag-box {
+      position: relative;
+      display: inline-flex;
+      padding: 1.5px;
+      border-radius: 9999px;
+      background: linear-gradient(110deg, #2c2f36, #71717a, #ffffff, #9ca3af, #2c2f36);
+      background-size: 220% 220%;
+      animation: metallicShimmer 4s ease-in-out infinite;
+      box-shadow: 0 0 24px rgba(255, 255, 255, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tag-box:hover {
+      transform: translateY(-1px) scale(1.015);
+      box-shadow: 0 0 32px rgba(255, 255, 255, 0.16);
+    }
+
+    .tag-box-inner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: linear-gradient(180deg, #121317 0%, #090a0c 100%);
+      border-radius: 9999px;
+      padding: 0.45rem 1.25rem;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: #e5e7eb;
+    }
+
+    /* Metallic Silver Gradient Headings */
+    .metallic-heading {
+      background: linear-gradient(180deg, #ffffff 0%, #d4d4d8 52%, #8e929b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Smoked-Glass & Brushed Titanium Card Surface */
+    .smoked-glass {
+      position: relative;
+      background: linear-gradient(145deg, rgba(24, 26, 31, 0.78) 0%, rgba(14, 15, 18, 0.90) 55%, rgba(8, 9, 11, 0.95) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow:
+        0 24px 60px -15px rgba(0, 0, 0, 0.9),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    }
+
+    .smoked-glass:hover {
+      border-color: rgba(255, 255, 255, 0.24);
+      box-shadow:
+        0 28px 70px -12px rgba(0, 0, 0, 0.95),
+        0 0 36px rgba(255, 255, 255, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+
+    /* 3D Perspective Tilt Cards & Dynamic Silver Specular Cursor Spotlight */
+    .tilt-card {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+
+    .tilt-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        520px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.11),
+        rgba(209, 213, 219, 0.04) 40%,
+        transparent 75%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .tilt-card:hover::before {
+      opacity: 1;
+    }
+
+    .tilt-card-inner {
+      transform: translateZ(16px);
+    }
+
+    /* Entrance & Scroll Reveal Animations */
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeZoomIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-fade-down {
+      animation: fadeDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-fade-zoom-1 {
+      opacity: 0;
+      animation: fadeZoomIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.08s forwards;
+    }
+    .animate-fade-zoom-2 {
+      opacity: 0;
+      animation: fadeZoomIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+    .animate-fade-zoom-3 {
+      opacity: 0;
+      animation: fadeZoomIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.34s forwards;
+    }
+    .animate-fade-zoom-4 {
+      opacity: 0;
+      animation: fadeZoomIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.48s forwards;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(28px) scale(0.985);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Crisp Chrome White & Smoked Titanium Pill Buttons */
+    .btn-chrome-white {
+      background: linear-gradient(180deg, #ffffff 0%, #e5e7eb 100%);
+      color: #050506;
+      border-radius: 9999px;
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.14), inset 0 1px 0 #ffffff;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-chrome-white:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(255, 255, 255, 0.26);
+    }
+
+    .btn-titanium-outline {
+      background: linear-gradient(180deg, rgba(24, 26, 31, 0.85) 0%, rgba(14, 15, 18, 0.92) 100%);
+      color: #f3f4f6;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 9999px;
+      font-weight: 600;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-titanium-outline:hover {
+      background: rgba(44, 47, 54, 0.65);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.42);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.08);
+    }
+
+    /* Monochrome-Tuned Skill Icon Styling */
+    .skill-icon-chrome {
+      filter: grayscale(100%) contrast(1.18) brightness(1.15);
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .group:hover .skill-icon-chrome {
+      filter: grayscale(15%) contrast(1.1) brightness(1.22);
+    }
+
+    /* 3D Canvas Container */
+    #hero-3d-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      cursor: grab;
+    }
+    #hero-3d-wrapper:active {
+      cursor: grabbing;
+    }
+
+    /* Parallax Floating Depth Elements */
+    .parallax-layer {
+      will-change: transform;
+      transition: transform 0.08s linear;
+    }
+  </style>
 </head>
-<body>
+<body class="antialiased selection:bg-zinc-200 selection:text-black">
 
-<header>
-  <div class="wrap">
-    <nav>
-      <a href="#top" class="logo"><img src="assets/profile.jpg" alt="Socialmania99 avatar">Social Mania</a>
-      <div class="links">
-        <a href="#about" class="hide-sm">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills" class="hide-sm">Skills</a>
-        <a href="#contact">Contact</a>
-        <button class="icon-btn" id="theme" aria-label="Toggle theme" title="Toggle theme">◐</button>
-      </div>
-    </nav>
+  <!-- Ambient Studio Silver Lighting & Background Particle Field -->
+  <canvas id="bg-starfield" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+  <div class="architectural-grid"></div>
+  <div id="ambient-beam" class="studio-beam-diagonal"></div>
+  <div id="ambient-blur" class="studio-blur-top"></div>
+  <div id="ambient-secondary" class="studio-aura-bottom"></div>
+
+  <!-- Monochrome Chrome Scroll Progress Indicator -->
+  <div class="fixed top-0 left-0 right-0 h-[2px] z-50 bg-transparent">
+    <div id="scroll-progress" class="h-full w-0 bg-gradient-to-r from-zinc-600 via-zinc-300 to-white shadow-[0_0_10px_rgba(255,255,255,0.65)]"></div>
   </div>
-</header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap">
-    <img class="avatar" src="assets/profile.jpg" alt="Social Mania profile logo" width="132" height="132">
-    <br>
-    <h1 class="hand hi">Hi, I'm Social Mania</h1>
-    <div class="hand role">Developer by hobby</div>
-    <p class="tag">Weekend builder. I turn small ideas into small apps, just for fun.</p>
-    <div class="cta">
-      <a class="btn primary" href="#projects">View My Work</a>
-      <a class="btn ghost" href="https://github.com/Socialmania99" target="_blank" rel="noopener">GitHub Profile</a>
-    </div>
-  </div>
-</section>
+  <!-- STICKY GLASSMORPHIC HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-40 animate-fade-down">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-4">
+      <nav class="smoked-glass rounded-full px-5 sm:px-7 py-3 flex items-center justify-between">
+        <!-- Brand Logo with Minimalist Monochrome SM Geometric Emblem -->
+        <a href="#" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-b from-white via-zinc-400 to-zinc-700 p-[1.5px] shadow-[0_0_16px_rgba(255,255,255,0.16)] group-hover:scale-105 transition-transform">
+            <div class="w-full h-full rounded-full bg-[#090a0d] flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.75" />
+                <circle cx="9.2" cy="12" r="1.4" fill="currentColor" />
+                <circle cx="14.8" cy="12" r="1.4" fill="currentColor" />
+              </svg>
+            </div>
+          </div>
+          <span class="font-display font-semibold text-sm sm:text-base tracking-[0.18em] text-zinc-100 uppercase group-hover:text-white transition-colors">
+            Social Mania
+          </span>
+        </a>
 
-<section id="about">
-  <div class="wrap">
-    <h2 class="title">About Me</h2>
-    <p class="sub">Coding is my hobby, not my job.</p>
-    <div class="about">
-      <div>
-        <p>I come from a completely different domain and have a real full-time job. Coding started as a way to have fun with AI, and it stuck as a hobby.</p>
-        <p>I take ideas I like, often inspired by other developers' work, and turn them into small apps of my own. Everything here is built in my free spare time, mostly on weekends, and with some help from AI I can make these fun projects real.</p>
-        <div class="meta">
-          <span class="chip">🌱 Self-taught hobbyist</span>
-          <span class="chip">🤖 AI-assisted</span>
-          <span class="chip">🗓 Weekend projects</span>        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="wrap">
-    <h2 class="title">My Projects</h2>
-    <p class="sub">Open source, free, MIT licensed.</p>
-    <div class="grid">
-
-      <article class="card">
-        <div class="top">
-          <div class="ico">📋</div>
-          <h3>Copyit</h3>
-          <span class="badge">v1.0.0 · Chrome</span>
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="text-xs font-medium tracking-[0.16em] uppercase text-zinc-400 hover:text-white transition-colors relative group">
+            About
+            <span class="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-gradient-to-r from-zinc-400 to-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#projects" class="text-xs font-medium tracking-[0.16em] uppercase text-zinc-400 hover:text-white transition-colors relative group">
+            Projects
+            <span class="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-gradient-to-r from-zinc-400 to-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#skills" class="text-xs font-medium tracking-[0.16em] uppercase text-zinc-400 hover:text-white transition-colors relative group">
+            Skills
+            <span class="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-gradient-to-r from-zinc-400 to-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#contact" class="text-xs font-medium tracking-[0.16em] uppercase text-zinc-400 hover:text-white transition-colors relative group">
+            Contact
+            <span class="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-gradient-to-r from-zinc-400 to-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
         </div>
-        <p class="d">Free Chrome extension. Save text, links, code, images and videos once, find them forever. Everything stays on your device. No account, no tracking, no server.</p>
-        <ul>
-          <li>Save, search, tag and sort clips into folders</li>
-          <li>Filters: All, Links, Code, Multimedia</li>
-          <li>Scan to open: offline QR codes for short clips</li>
-          <li>Import and export: JSON, CSV, TXT, Markdown</li>
-          <li>Multicolor or Black &amp; White themes, Light / Dark / Auto</li>
-          <li>Shortcut: Ctrl+Shift+Y (Cmd+Shift+Y on Mac)</li>
-        </ul>
-        <div class="tags"><span>JavaScript</span><span>Manifest V3</span><span>Privacy first</span><span>MIT</span></div>
-        <div class="actions">
-          <a class="btn primary" href="https://Socialmania99.github.io/copyit/" target="_blank" rel="noopener">Website</a>
-          <a class="btn ghost" href="https://github.com/Socialmania99/Copyit" target="_blank" rel="noopener">Source Code</a>
-          <a class="btn ghost" href="https://github.com/Socialmania99/Copyit/releases/latest" target="_blank" rel="noopener">Download</a>
-          <a class="btn ghost" href="https://drive.google.com/file/d/1RxlnzMSdSZsIr42oWVV7r6P7LsoFYRQT/view?usp=sharing" target="_blank" rel="noopener">Google Drive</a>
-        </div>
-      </article>
 
-      <article class="card">
-        <div class="top">
-          <div class="ico">🗂</div>
-          <h3>Archiv AI</h3>
-          <span class="badge">v1.0 · Chromium</span>
-        </div>
-        <p class="d">Chat Exporter &amp; Library. Export ChatGPT, Claude, Gemini and 230+ AI chats to PDF, Word, Markdown, Notion and Obsidian. Private, on-device, open source.</p>
-        <ul>
-          <li>Nine formats: PDF, Word, image, Markdown, HTML, JSON, text, Notion, Obsidian</li>
-          <li>Private searchable library with folders and topic tags</li>
-          <li>Duplicate-aware saving, redaction of keys, tokens, emails, phones</li>
-          <li>239-tool directory, 15 hand-written adapters, auto-detect, Teach Archiv AI</li>
-          <li>Works in Chrome, Edge, Brave. Shortcut: Alt+Shift+E</li>
-        </ul>
-        <div class="tags"><span>JavaScript</span><span>Manifest V3</span><span>Notion</span><span>Obsidian</span><span>MIT</span></div>
-        <div class="actions">
-          <a class="btn primary" href="https://socialmania99.github.io/archiv-ai/" target="_blank" rel="noopener">Website</a>
-          <a class="btn ghost" href="https://github.com/Socialmania99/archiv-ai" target="_blank" rel="noopener">Source Code</a>
-          <a class="btn ghost" href="https://github.com/Socialmania99/archiv-ai/releases/tag/v1.0" target="_blank" rel="noopener">Download</a>
-          <a class="btn ghost" href="https://youtu.be/EjymdaLmpWI" target="_blank" rel="noopener">▶ Walkthrough</a>
-        </div>
-      </article>
-    </div>
+        <!-- Right GitHub Quick Icon Button & Mobile Menu Toggle -->
+        <div class="flex items-center gap-3">
+          <a
+            href="https://github.com/Socialmania99"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Socialmania99 on GitHub"
+            class="btn-chrome-white px-4 sm:px-5 py-2 text-xs sm:text-sm inline-flex items-center gap-2"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span class="hidden sm:inline">GitHub</span>
+          </a>
 
-    <div class="more">
-      <h4>More on GitHub</h4>
-      <div class="mini">
-        <a href="https://github.com/Socialmania99/Click-Automator-Pro" target="_blank" rel="noopener"><b>Click-Automator-Pro</b><span>Python tool to record and replay mouse and keyboard sequences with speed control.</span></a>
+          <!-- Mobile Hamburger -->
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-label="Toggle Menu"
+            class="md:hidden p-2.5 rounded-full bg-white/5 border border-white/15 text-zinc-200 hover:text-white hover:bg-white/10 transition-colors"
+          >
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden mt-2 smoked-glass rounded-3xl p-5">
+        <div class="flex flex-col space-y-2">
+          <a href="#about" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-[0.16em] text-zinc-300 hover:bg-white/10 hover:text-white transition-colors">About</a>
+          <a href="#projects" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-[0.16em] text-zinc-300 hover:bg-white/10 hover:text-white transition-colors">Projects</a>
+          <a href="#skills" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-[0.16em] text-zinc-300 hover:bg-white/10 hover:text-white transition-colors">Skills</a>
+          <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-[0.16em] text-zinc-300 hover:bg-white/10 hover:text-white transition-colors">Contact</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="skills">
-  <div class="wrap">
-    <h2 class="title">Skills &amp; Technologies</h2>
-    <p class="sub">What I use to build things.</p>
-    <div class="skills">
-      <div class="sk"><h3>Languages</h3><div class="techs"><div class="tech"><img src="assets/icons/javascript.svg" alt="JavaScript logo" width="40" height="40" loading="lazy"><span>JavaScript</span></div><div class="tech"><img src="assets/icons/typescript.svg" alt="TypeScript logo" width="40" height="40" loading="lazy"><span>TypeScript</span></div><div class="tech"><img src="assets/icons/python.svg" alt="Python logo" width="40" height="40" loading="lazy"><span>Python</span></div><div class="tech"><img src="assets/icons/html5.svg" alt="HTML5 logo" width="40" height="40" loading="lazy"><span>HTML5</span></div><div class="tech"><img src="assets/icons/css3.svg" alt="CSS3 logo" width="40" height="40" loading="lazy"><span>CSS3</span></div><div class="tech"><img src="assets/icons/bash.svg" alt="Bash logo" width="40" height="40" loading="lazy"><span>Bash</span></div><div class="tech"><img src="assets/icons/java.svg" alt="Java logo" width="40" height="40" loading="lazy"><span>Java</span></div><div class="tech"><img src="assets/icons/cplusplus.svg" alt="C++ logo" width="40" height="40" loading="lazy"><span>C++</span></div><div class="tech"><img src="assets/icons/php.svg" alt="PHP logo" width="40" height="40" loading="lazy"><span>PHP</span></div><div class="tech"><img src="assets/icons/mysql.svg" alt="SQL logo" width="40" height="40" loading="lazy"><span>SQL</span></div></div></div>
-      <div class="sk"><h3>Tools &amp; Platforms</h3><div class="techs"><div class="tech"><img src="assets/icons/git.svg" alt="Git logo" width="40" height="40" loading="lazy"><span>Git</span></div><div class="tech"><img src="assets/icons/github.svg" alt="GitHub logo" width="40" height="40" loading="lazy"><span>GitHub</span></div><div class="tech"><img src="assets/icons/vscode.svg" alt="VS Code logo" width="40" height="40" loading="lazy"><span>VS Code</span></div><div class="tech"><img src="assets/icons/nodejs.svg" alt="Node.js logo" width="40" height="40" loading="lazy"><span>Node.js</span></div><div class="tech"><img src="assets/icons/npm.svg" alt="npm logo" width="40" height="40" loading="lazy"><span>npm</span></div><div class="tech"><img src="assets/icons/chrome.svg" alt="Chrome logo" width="40" height="40" loading="lazy"><span>Chrome</span></div><div class="tech"><img src="assets/icons/playwright.svg" alt="Playwright logo" width="40" height="40" loading="lazy"><span>Playwright</span></div><div class="tech"><img src="assets/icons/notion.svg" alt="Notion logo" width="40" height="40" loading="lazy"><span>Notion</span></div><div class="tech"><img src="assets/icons/figma.svg" alt="Figma logo" width="40" height="40" loading="lazy"><span>Figma</span></div><div class="tech"><img src="assets/icons/docker.svg" alt="Docker logo" width="40" height="40" loading="lazy"><span>Docker</span></div><div class="tech"><img src="assets/icons/linux.svg" alt="Linux logo" width="40" height="40" loading="lazy"><span>Linux</span></div><div class="tech"><img src="assets/icons/postman.svg" alt="Postman logo" width="40" height="40" loading="lazy"><span>Postman</span></div></div></div>
+  <!-- MAIN CONTENT -->
+  <main class="relative z-10">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-28 pb-16 lg:pt-24 lg:pb-12 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
+
+          <!-- Left Column: Hero Copy & Metallic Shimmer Pill Badge -->
+          <div class="lg:col-span-6 space-y-7 z-20 parallax-layer" data-parallax-speed="0.07">
+            <!-- Animated Metallic Shimmer Tag Box -->
+            <div class="animate-fade-zoom-1">
+              <div class="tag-box">
+                <div class="tag-box-inner">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                  <span>DEVELOPER BY HOBBY</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Main Headline -->
+            <div class="space-y-3 animate-fade-zoom-2">
+              <h1 class="font-display font-extrabold text-4xl sm:text-6xl xl:text-7xl tracking-tight leading-[1.06] metallic-heading">
+                Hi, I'm <br class="hidden sm:block" />
+                Social Mania
+              </h1>
+            </div>
+
+            <!-- Subtitle -->
+            <p class="text-zinc-400 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed animate-fade-zoom-3">
+              Weekend builder. I turn small ideas into small apps, just for fun.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-4 pt-2 animate-fade-zoom-4">
+              <a href="#projects" class="btn-chrome-white px-7 py-3.5 text-sm sm:text-base inline-flex items-center gap-2.5">
+                <span>View My Work</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/Socialmania99"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-titanium-outline px-7 py-3.5 text-sm sm:text-base inline-flex items-center gap-2.5"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+
+            <!-- Minimalist Monochrome Status Strip -->
+            <div class="pt-4 flex flex-wrap items-center gap-6 text-xs font-mono text-zinc-500 animate-fade-zoom-4">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-zinc-200"></span>
+                <span>OPEN SOURCE · MIT LICENSED</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-zinc-300">◎</span>
+                <span>CLICK OR DRAG AERO-ORB COMPANION</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Smooth Ceramic & Titanium "Aero-Orb" 3D Companion Bot -->
+          <div class="lg:col-span-6 relative h-[430px] sm:h-[510px] lg:h-[600px] flex items-center justify-center z-10 parallax-layer" data-parallax-speed="-0.05">
+            <!-- Soft Silver Studio Halo Behind Bot -->
+            <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-white/[0.05] blur-[95px] pointer-events-none"></div>
+
+            <div id="hero-3d-wrapper" class="w-full h-full rounded-3xl">
+              <canvas id="aero-bot-canvas" class="w-full h-full block"></canvas>
+            </div>
+
+            <!-- Interactive Bot Mode Pill Switcher -->
+            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:bottom-5 sm:right-5 smoked-glass rounded-full p-1 flex items-center gap-1 border border-white/15 z-20">
+              <button
+                type="button"
+                data-bot-mode="orbit"
+                class="bot-mode-btn px-3 py-1.5 rounded-full text-[11px] font-mono uppercase tracking-wider bg-white text-black font-semibold transition-all"
+              >
+                Orbit
+              </button>
+              <button
+                type="button"
+                data-bot-mode="focus"
+                class="bot-mode-btn px-3 py-1.5 rounded-full text-[11px] font-mono uppercase tracking-wider text-zinc-400 hover:text-white transition-all"
+              >
+                Focus
+              </button>
+              <button
+                type="button"
+                data-bot-mode="pulse"
+                class="bot-mode-btn px-3 py-1.5 rounded-full text-[11px] font-mono uppercase tracking-wider text-zinc-400 hover:text-white transition-all"
+              >
+                Pulse
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="relative py-20 sm:py-28">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="reveal-on-scroll">
+          <!-- Section Header -->
+          <div class="mb-10 text-center sm:text-left">
+            <span class="font-mono text-xs uppercase tracking-[0.25em] text-zinc-400 block mb-2">01 // STORY</span>
+            <h2 class="font-display font-bold text-3xl sm:text-5xl metallic-heading tracking-tight">About Me</h2>
+          </div>
+
+          <!-- 3D Tilt Smoked-Glass Card -->
+          <div class="tilt-card smoked-glass rounded-3xl p-7 sm:p-11">
+            <div class="tilt-card-inner space-y-6">
+              <div class="inline-block px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/15 text-zinc-100 font-display font-semibold text-base sm:text-lg">
+                “Coding is my hobby, not my job.”
+              </div>
+
+              <div class="space-y-4 text-zinc-300 text-base sm:text-lg leading-relaxed">
+                <p>
+                  I come from a completely different domain and have a real full-time job. Coding started as a way to have fun with AI, and it stuck as a hobby.
+                </p>
+                <p>
+                  I take ideas I like, often inspired by other developers' work, and turn them into small apps of my own. Everything here is built in my free spare time, mostly on weekends, and with some help from AI I can make these fun projects real.
+                </p>
+              </div>
+
+              <!-- Highlight Badges in Sleek Monochrome Glass Pills -->
+              <div class="pt-4 flex flex-wrap gap-3 sm:gap-4">
+                <div class="px-4 py-2.5 rounded-full bg-white/[0.04] border border-white/15 hover:border-white/35 transition-colors flex items-center gap-2.5 text-sm sm:text-base font-medium text-zinc-100">
+                  <span class="text-base">🌱</span>
+                  <span>Self-taught hobbyist</span>
+                </div>
+                <div class="px-4 py-2.5 rounded-full bg-white/[0.04] border border-white/15 hover:border-white/35 transition-colors flex items-center gap-2.5 text-sm sm:text-base font-medium text-zinc-100">
+                  <span class="text-base">🤖</span>
+                  <span>AI-assisted</span>
+                </div>
+                <div class="px-4 py-2.5 rounded-full bg-white/[0.04] border border-white/15 hover:border-white/35 transition-colors flex items-center gap-2.5 text-sm sm:text-base font-medium text-zinc-100">
+                  <span class="text-base">🗓</span>
+                  <span>Weekend projects</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MY PROJECTS SECTION -->
+    <section id="projects" class="relative py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <!-- Section Header -->
+        <div class="mb-14 reveal-on-scroll flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.25em] text-zinc-400 block mb-2">02 // BUILDS</span>
+            <h2 class="font-display font-bold text-3xl sm:text-5xl metallic-heading tracking-tight">My Projects</h2>
+          </div>
+          <p class="font-mono text-xs sm:text-sm text-zinc-300 bg-white/[0.04] border border-white/15 px-4 py-2 rounded-full">
+            Open source, free, MIT licensed.
+          </p>
+        </div>
+
+        <!-- Primary Projects Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+
+          <!-- PROJECT 1: Copyit -->
+          <article class="tilt-card smoked-glass rounded-3xl p-7 sm:p-9 flex flex-col justify-between reveal-on-scroll">
+            <div class="tilt-card-inner space-y-6">
+              <!-- Card Top Header -->
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl bg-gradient-to-b from-zinc-700/50 to-zinc-900/90 border border-white/20 flex items-center justify-center text-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+                    📋
+                  </div>
+                  <div>
+                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-white">Copyit</h3>
+                    <span class="inline-block mt-1 font-mono text-xs px-3 py-0.5 rounded-full bg-white/[0.07] text-zinc-200 border border-white/15">
+                      v1.0.0 · Chrome
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                Free Chrome extension. Save text, links, code, images and videos once, find them forever. Everything stays on your device. No account, no tracking, no server.
+              </p>
+
+              <!-- All 6 Features -->
+              <ul class="space-y-2.5 text-sm text-zinc-300">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Save, search, tag and sort clips into folders</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Filters: All, Links, Code, Multimedia</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Scan to open: offline QR codes for short clips</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Import and export: JSON, CSV, TXT, Markdown</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Multicolor or Black &amp; White themes, Light / Dark / Auto</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Shortcut: <code class="font-mono text-xs px-2 py-0.5 rounded bg-white/10 text-white border border-white/10">Ctrl+Shift+Y</code> (<code class="font-mono text-xs px-2 py-0.5 rounded bg-white/10 text-white border border-white/10">Cmd+Shift+Y</code> on Mac)</span>
+                </li>
+              </ul>
+
+              <!-- Tech Pills -->
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">JavaScript</span>
+                <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">Manifest V3</span>
+                <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">Privacy first</span>
+                <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">MIT</span>
+              </div>
+            </div>
+
+            <!-- All 4 Action Links -->
+            <div class="tilt-card-inner pt-7 mt-7 border-t border-white/10 grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5">
+              <a
+                href="https://Socialmania99.github.io/copyit/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-chrome-white px-4 py-2 text-xs sm:text-sm inline-flex items-center justify-center gap-1.5"
+              >
+                <span>Website</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href="https://github.com/Socialmania99/Copyit"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-titanium-outline px-4 py-2 text-xs sm:text-sm inline-flex items-center justify-center gap-1.5"
+              >
+                <span>Source Code</span>
+              </a>
+              <a
+                href="https://github.com/Socialmania99/Copyit/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-titanium-outline px-4 py-2 text-xs sm:text-sm inline-flex items-center justify-center gap-1.5"
+              >
+                <span>Download</span>
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1RxlnzMSdSZsIr42oWVV7r6P7LsoFYRQT/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-titanium-outline px-4 py-2 text-xs sm:text-sm inline-flex items-center justify-center gap-1.5"
+              >
+                <span>Google Drive</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Archiv AI -->
+          <article class="tilt-card smoked-glass rounded-3xl p-7 sm:p-9 flex flex-col justify-between reveal-on-scroll">
+            <div class="tilt-card-inner space-y-6">
+              <!-- Card Top Header -->
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl bg-gradient-to-b from-zinc-700/50 to-zinc-900/90 border border-white/20 flex items-center justify-center text-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+                    🗂
+                  </div>
+                  <div>
+                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-white">Archiv AI</h3>
+                    <span class="inline-block mt-1 font-mono text-xs px-3 py-0.5 rounded-full bg-white/[0.07] text-zinc-200 border border-white/15">
+                      v1.0 · Chromium
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                Chat Exporter &amp; Library. Export ChatGPT, Claude, Gemini and 230+ AI chats to PDF, Word, Markdown, Notion and Obsidian. Private, on-device, open source.
+              </p>
+
+              <!-- All 5 Features -->
+              <ul class="space-y-2.5 text-sm text-zinc-300">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Nine formats: PDF, Word, image, Markdown, HTML, JSON, text, Notion, Obsidian</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Private searchable library with folders and topic tags</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Duplicate-aware saving, redaction of keys, tokens, emails, phones</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>239-tool directory, 15 hand-written adapters, auto-detect, Teach Archiv AI</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-zinc-200 mt-0.5">▹</span>
+                  <span>Works in Chrome, Edge, Brave. Shortcut: <code class="font-mono text-xs px-2 py-0.5 rounded bg-white/10 text-white border border-white/10">Alt+Shift+E</code></span>
+                </li>
+              </ul>
+
+              <!-- Tech Pills -->
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">JavaScript</span>
+                <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">Manifest V3</span>
+                <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">Notion</span>
+                <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">Obsidian</span>
+                <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">MIT</span>
+              </div>
+            </div>
+
+            <!-- All 4 Action Links -->
+            <div class="tilt-card-inner pt-7 mt-7 border-t border-white/10 grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5">
+              <a
+                href="https://socialmania99.github.io/archiv-ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-chrome-white px-4 py-2 text-xs sm:text-sm inline-flex items-center justify-center gap-1.5"
+              >
+                <span>Website</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href="https://github.com/Socialmania99/archiv-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-titanium-outline px-4 py-2 text-xs sm:text-sm inline-flex items-center justify-center gap-1.5"
+              >
+                <span>Source Code</span>
+              </a>
+              <a
+                href="https://github.com/Socialmania99/archiv-ai/releases/tag/v1.0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-titanium-outline px-4 py-2 text-xs sm:text-sm inline-flex items-center justify-center gap-1.5"
+              >
+                <span>Download</span>
+              </a>
+              <a
+                href="https://youtu.be/EjymdaLmpWI"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-titanium-outline px-4 py-2 text-xs sm:text-sm inline-flex items-center justify-center gap-1.5"
+              >
+                <span>▶ Walkthrough</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- MORE ON GITHUB SUB-CARD -->
+        <div class="mt-10 reveal-on-scroll">
+          <div class="mb-4 flex items-center gap-3">
+            <span class="font-mono text-xs uppercase tracking-[0.22em] text-zinc-400">More on GitHub</span>
+            <div class="h-[1px] flex-1 bg-white/10"></div>
+          </div>
+
+          <a
+            href="https://github.com/Socialmania99/Click-Automator-Pro"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="tilt-card smoked-glass rounded-3xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group block"
+          >
+            <div class="tilt-card-inner space-y-1.5">
+              <div class="flex items-center gap-3">
+                <span class="text-xl">🖱️</span>
+                <h3 class="font-display font-bold text-xl text-white group-hover:text-zinc-200 transition-colors">
+                  Click-Automator-Pro
+                </h3>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-white/[0.06] border border-white/15 text-zinc-300">
+                  Python
+                </span>
+              </div>
+              <p class="text-zinc-400 text-sm sm:text-base">
+                Python tool to record and replay mouse and keyboard sequences with speed control.
+              </p>
+            </div>
+            <div class="tilt-card-inner shrink-0">
+              <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] group-hover:bg-white group-hover:text-black border border-white/15 text-sm font-semibold text-white transition-all">
+                <span>View Repo</span>
+                <span>↗</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & TECHNOLOGIES SECTION -->
+    <section id="skills" class="relative py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <!-- Header & Interactive Filter Tabs -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.25em] text-zinc-400 block mb-2">03 // TOOLKIT</span>
+            <h2 class="font-display font-bold text-3xl sm:text-5xl metallic-heading tracking-tight">Skills &amp; Technologies</h2>
+            <p class="text-zinc-400 text-base sm:text-lg mt-2">What I use to build things.</p>
+          </div>
+
+          <!-- Filter Pill Switcher with Crisp Monochrome Active State -->
+          <div class="inline-flex p-1.5 rounded-full smoked-glass self-start md:self-auto" role="tablist">
+            <button
+              type="button"
+              data-skill-filter="all"
+              class="skill-filter-btn active px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-black shadow"
+            >
+              All (22)
+            </button>
+            <button
+              type="button"
+              data-skill-filter="languages"
+              class="skill-filter-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all text-zinc-400 hover:text-white"
+            >
+              Languages (10)
+            </button>
+            <button
+              type="button"
+              data-skill-filter="tools"
+              class="skill-filter-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all text-zinc-400 hover:text-white"
+            >
+              Tools &amp; Platforms (12)
+            </button>
+          </div>
+        </div>
+
+        <!-- Skills Grid -->
+        <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 reveal-on-scroll">
+          <!-- Populated cleanly on load -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT SECTION -->
+    <section class="relative py-12 sm:py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 reveal-on-scroll">
+        <div class="tilt-card smoked-glass rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-white/15">
+          <!-- Subtle Silver Studio Glow Inside Card -->
+          <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-white/[0.06] blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-zinc-400/[0.05] blur-3xl pointer-events-none"></div>
+
+          <div class="tilt-card-inner relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-7">
+            <div class="space-y-3 max-w-xl">
+              <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">
+                Like my tools? Buy me a coffee ☕
+              </h2>
+              <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                Everything I build is free and open source. If a project saved you time, a coffee helps me keep shipping.
+              </p>
+            </div>
+
+            <a
+              href="https://buymeacoffee.com/socialmania99"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-chrome-white px-7 py-4 text-sm sm:text-base inline-flex items-center gap-2.5 shrink-0"
+            >
+              <span>☕ Support on Buy Me a Coffee</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GET IN TOUCH SECTION -->
+    <section id="contact" class="relative py-20 sm:py-28">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 text-center reveal-on-scroll">
+        <div class="tilt-card smoked-glass rounded-3xl p-8 sm:p-14">
+          <div class="tilt-card-inner space-y-6">
+            <span class="font-mono text-xs uppercase tracking-[0.25em] text-zinc-400 block">04 // CONNECT</span>
+            <h2 class="font-display font-bold text-3xl sm:text-5xl metallic-heading tracking-tight">Get In Touch</h2>
+            <p class="text-zinc-300 text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
+              Found a bug or have an idea? Open an issue or say hi on GitHub.
+            </p>
+
+            <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="https://github.com/Socialmania99"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-chrome-white px-7 py-3.5 text-sm sm:text-base inline-flex items-center gap-2.5"
+              >
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+                <span>github.com/Socialmania99</span>
+              </a>
+
+              <a
+                href="https://github.com/Socialmania99?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-titanium-outline px-7 py-3.5 text-sm sm:text-base inline-flex items-center gap-2"
+              >
+                <span>All repositories</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-white/10 bg-[#050506]/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-400">
+      <p>© 2026 Social Mania (Socialmania99). Open source under MIT.</p>
+      <div class="flex items-center gap-6">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="https://github.com/Socialmania99" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section>
-  <div class="wrap">
-    <div class="support">
-      <div class="hand">Like my tools? Buy me a coffee ☕</div>
-      <p>Everything I build is free and open source. If a project saved you time, a coffee helps me keep shipping.</p>
-      <a class="btn coffee" href="https://buymeacoffee.com/socialmania99" target="_blank" rel="noopener">☕ Support on Buy Me a Coffee</a>
-    </div>
-  </div>
-</section>
+  <!-- INTERACTIVE 3D ENGINE, PARALLAX, SKILLS & UI LOGIC -->
+  <script>
+    (function () {
+      'use strict';
 
-<section id="contact" style="padding-top:20px">
-  <div class="wrap" style="text-align:center">
-    <h2 class="title">Get In Touch</h2>
-    <p class="sub">Found a bug or have an idea? Open an issue or say hi on GitHub.</p>
-    <div class="contact">
-      <a class="btn ghost" href="https://github.com/Socialmania99" target="_blank" rel="noopener">github.com/Socialmania99</a>
-      <a class="btn ghost" href="https://github.com/Socialmania99?tab=repositories" target="_blank" rel="noopener">All repositories</a>
-    </div>
-  </div>
-</section>
-</main>
+      /* =========================================================================
+       * 1. SKILLS DATA & RENDERING (All 22 Items: 10 Languages + 12 Tools)
+       * ========================================================================= */
+      const skillsData = [
+        // Languages (10)
+        { name: 'JavaScript', category: 'languages', iconClass: 'devicon-javascript-plain colored' },
+        { name: 'TypeScript', category: 'languages', iconClass: 'devicon-typescript-plain colored' },
+        { name: 'Python', category: 'languages', iconClass: 'devicon-python-plain colored' },
+        { name: 'HTML5', category: 'languages', iconClass: 'devicon-html5-plain colored' },
+        { name: 'CSS3', category: 'languages', iconClass: 'devicon-css3-plain colored' },
+        { name: 'Bash', category: 'languages', iconClass: 'devicon-bash-plain text-zinc-200' },
+        { name: 'Java', category: 'languages', iconClass: 'devicon-java-plain colored' },
+        { name: 'C++', category: 'languages', iconClass: 'devicon-cplusplus-plain colored' },
+        { name: 'PHP', category: 'languages', iconClass: 'devicon-php-plain colored' },
+        { name: 'SQL', category: 'languages', iconClass: 'devicon-azuresqldatabase-plain colored' },
 
-<footer>
-  <div class="wrap">© <span id="yr">2026</span> Social Mania (Socialmania99). Open source under MIT.</div>
-</footer>
+        // Tools & Platforms (12)
+        { name: 'Git', category: 'tools', iconClass: 'devicon-git-plain colored' },
+        { name: 'GitHub', category: 'tools', iconClass: 'devicon-github-original text-white' },
+        { name: 'VS Code', category: 'tools', iconClass: 'devicon-vscode-plain colored' },
+        { name: 'Node.js', category: 'tools', iconClass: 'devicon-nodejs-plain colored' },
+        { name: 'npm', category: 'tools', iconClass: 'devicon-npm-original-wordmark colored' },
+        { name: 'Chrome', category: 'tools', iconClass: 'devicon-chrome-plain colored' },
+        { name: 'Playwright', category: 'tools', iconClass: 'devicon-playwright-plain colored' },
+        { name: 'Notion', category: 'tools', iconClass: 'devicon-notion-plain text-white' },
+        { name: 'Figma', category: 'tools', iconClass: 'devicon-figma-plain colored' },
+        { name: 'Docker', category: 'tools', iconClass: 'devicon-docker-plain colored' },
+        { name: 'Linux', category: 'tools', iconClass: 'devicon-linux-plain text-zinc-200' },
+        { name: 'Postman', category: 'tools', iconClass: 'devicon-postman-plain colored' },
+      ];
 
-<script>
-(function(){
-  document.getElementById('yr').textContent = new Date().getFullYear();
+      const skillsGrid = document.getElementById('skills-grid');
+      const filterButtons = document.querySelectorAll('.skill-filter-btn');
 
-  // theme toggle
-  var root = document.documentElement;
-  try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch(e){}
-  document.getElementById('theme').addEventListener('click', function(){
-    var cur = root.getAttribute('data-theme') ||
-      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    var next = cur === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch(e){}
-  });
+      function renderSkills(filter = 'all') {
+        if (!skillsGrid) return;
+        const filtered = filter === 'all'
+          ? skillsData
+          : skillsData.filter((item) => item.category === filter);
 
-})();
-</script>
+        skillsGrid.innerHTML = filtered
+          .map(
+            (skill) => `
+            <div class="tilt-card smoked-glass rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-center text-center gap-3 group cursor-default">
+              <div class="tilt-card-inner flex flex-col items-center gap-2.5">
+                <div class="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-white/35 flex items-center justify-center text-2xl sm:text-3xl transition-all duration-300 group-hover:scale-110">
+                  <i class="${skill.iconClass} skill-icon-chrome" aria-hidden="true"></i>
+                </div>
+                <span class="font-medium text-xs sm:text-sm text-zinc-200 group-hover:text-white transition-colors">
+                  ${skill.name}
+                </span>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-zinc-500">
+                  ${skill.category === 'languages' ? 'Language' : 'Tool'}
+                </span>
+              </div>
+            </div>
+          `
+          )
+          .join('');
+
+        attachTiltListeners();
+      }
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach((b) => {
+            b.classList.remove('bg-white', 'text-black', 'shadow');
+            b.classList.add('text-zinc-400');
+          });
+          btn.classList.add('bg-white', 'text-black', 'shadow');
+          btn.classList.remove('text-zinc-400');
+          renderSkills(btn.getAttribute('data-skill-filter'));
+        });
+      });
+
+      /* =========================================================================
+       * 2. MULTI-LAYER 3D PERSPECTIVE TILT CARDS & SILVER SPECULAR SPOTLIGHT
+       * ========================================================================= */
+      function attachTiltListeners() {
+        const tiltCards = document.querySelectorAll('.tilt-card');
+        tiltCards.forEach((card) => {
+          if (card.dataset.tiltBound === 'true') return;
+          card.dataset.tiltBound = 'true';
+
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) * 6;
+
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+            card.style.transform = `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.01, 1.01, 1.01)`;
+          });
+
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          });
+        });
+      }
+
+      /* =========================================================================
+       * 3. MOBILE NAVIGATION & SCROLL REVEAL / PARALLAX ENGINE
+       * ========================================================================= */
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIconOpen = document.getElementById('menu-icon-open');
+      const menuIconClose = document.getElementById('menu-icon-close');
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          mobileMenu.classList.toggle('hidden');
+          menuIconOpen.classList.toggle('hidden', isHidden);
+          menuIconClose.classList.toggle('hidden', !isHidden);
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIconOpen.classList.remove('hidden');
+            menuIconClose.classList.add('hidden');
+          });
+        });
+      }
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+        revealObserver.observe(el);
+      });
+
+      const scrollProgressBar = document.getElementById('scroll-progress');
+      const ambientBeam = document.getElementById('ambient-beam');
+      const ambientBlur = document.getElementById('ambient-blur');
+      const ambientSecondary = document.getElementById('ambient-secondary');
+      const parallaxLayers = document.querySelectorAll('.parallax-layer');
+
+      let latestScrollY = window.scrollY;
+      let tickingScroll = false;
+
+      function updateScrollParallax() {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (latestScrollY / docHeight) * 100 : 0;
+        if (scrollProgressBar) {
+          scrollProgressBar.style.width = `${progress}%`;
+        }
+
+        if (ambientBeam) {
+          ambientBeam.style.transform = `translate3d(0, ${latestScrollY * -0.1}px, 0) rotate(-28deg)`;
+        }
+        if (ambientBlur) {
+          ambientBlur.style.transform = `translate3d(${latestScrollY * -0.04}px, ${latestScrollY * 0.14}px, 0) rotate(-28deg)`;
+        }
+        if (ambientSecondary) {
+          ambientSecondary.style.transform = `translate3d(${latestScrollY * 0.05}px, ${latestScrollY * -0.09}px, 0)`;
+        }
+
+        if (window.innerWidth >= 1024 && latestScrollY < 900) {
+          parallaxLayers.forEach((layer) => {
+            const speed = parseFloat(layer.dataset.parallaxSpeed || '0');
+            layer.style.transform = `translate3d(0, ${latestScrollY * speed}px, 0)`;
+          });
+        }
+
+        tickingScroll = false;
+      }
+
+      window.addEventListener(
+        'scroll',
+        () => {
+          latestScrollY = window.scrollY;
+          if (!tickingScroll) {
+            window.requestAnimationFrame(updateScrollParallax);
+            tickingScroll = true;
+          }
+        },
+        { passive: true }
+      );
+
+      /* =========================================================================
+       * 4. MONOCHROME SILVER DUST & AMBIENT PARTICLE FIELD
+       * ========================================================================= */
+      function initStarfield() {
+        const canvas = document.getElementById('bg-starfield');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        const particleCount = Math.min(95, Math.floor((width * height) / 16000));
+        const particles = Array.from({ length: particleCount }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          z: Math.random() * 1.4 + 0.3,
+          radius: Math.random() * 1.35 + 0.3,
+          alpha: Math.random() * 0.45 + 0.1,
+          shade: Math.random() > 0.4 ? '255, 255, 255' : '161, 161, 170',
+        }));
+
+        let mouseX = width / 2;
+        let mouseY = height / 2;
+
+        window.addEventListener(
+          'mousemove',
+          (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+          },
+          { passive: true }
+        );
+
+        window.addEventListener('resize', () => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        });
+
+        function drawParticles() {
+          ctx.clearRect(0, 0, width, height);
+          const offsetX = (mouseX - width / 2) * 0.012;
+          const offsetY = (mouseY - height / 2) * 0.012;
+
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.y -= 0.12 * p.z;
+            if (p.y < 0) {
+              p.y = height;
+              p.x = Math.random() * width;
+            }
+
+            const drawX = (p.x + offsetX * p.z + width) % width;
+            const drawY = (p.y + offsetY * p.z + height) % height;
+
+            ctx.beginPath();
+            ctx.arc(drawX, drawY, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${p.shade}, ${p.alpha})`;
+            ctx.fill();
+          }
+
+          requestAnimationFrame(drawParticles);
+        }
+
+        drawParticles();
+      }
+
+      /* =========================================================================
+       * 5. THREE.JS SMOOTH ORGANIC CERAMIC & TITANIUM "AERO-ORB" COMPANION BOT
+       * ========================================================================= */
+      function initAeroOrbBot() {
+        const container = document.getElementById('hero-3d-wrapper');
+        const canvas = document.getElementById('aero-bot-canvas');
+        if (!container || !canvas || typeof THREE === 'undefined') return;
+
+        let width = container.clientWidth || 500;
+        let height = container.clientHeight || 500;
+
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x050506, 0.058);
+
+        const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
+        camera.position.set(0, 0.15, 6.6);
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: 'high-performance',
+        });
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // Monochrome Studio Volumetric Lighting (Pure White, Silver & Cool Titanium Rim)
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x111216, 0.7);
+        scene.add(hemiLight);
+
+        const keyLight = new THREE.DirectionalLight(0xffffff, 1.85);
+        keyLight.position.set(4.5, 5.5, 5.0);
+        scene.add(keyLight);
+
+        const rimLightLeft = new THREE.PointLight(0xe5e7eb, 2.2, 22);
+        rimLightLeft.position.set(-4.5, 2.0, -2.5);
+        scene.add(rimLightLeft);
+
+        const underThrusterLight = new THREE.PointLight(0xffffff, 1.6, 10);
+        underThrusterLight.position.set(0, -1.8, 0.5);
+        scene.add(underThrusterLight);
+
+        // Materials: Matte Obsidian Ceramic, Brushed Titanium, Smoked Glass, Pure White OLED
+        const matteCeramicMat = new THREE.MeshPhysicalMaterial({
+          color: 0x141519,
+          metalness: 0.25,
+          roughness: 0.32,
+          clearcoat: 0.45,
+          clearcoatRoughness: 0.28,
+        });
+
+        const brushedTitaniumMat = new THREE.MeshStandardMaterial({
+          color: 0x9ca3af,
+          metalness: 0.88,
+          roughness: 0.22,
+        });
+
+        const darkTitaniumMat = new THREE.MeshStandardMaterial({
+          color: 0x2c2f36,
+          metalness: 0.82,
+          roughness: 0.26,
+        });
+
+        const smokedGlassMat = new THREE.MeshPhysicalMaterial({
+          color: 0x050506,
+          metalness: 0.1,
+          roughness: 0.05,
+          clearcoat: 1.0,
+          clearcoatRoughness: 0.04,
+          reflectivity: 1.0,
+        });
+
+        const oledWhiteMat = new THREE.MeshStandardMaterial({
+          color: 0xffffff,
+          emissive: 0xffffff,
+          emissiveIntensity: 2.4,
+          roughness: 0.1,
+        });
+
+        const softSilverGlowMat = new THREE.MeshStandardMaterial({
+          color: 0xe5e7eb,
+          emissive: 0xd4d4d8,
+          emissiveIntensity: 1.6,
+          roughness: 0.2,
+        });
+
+        // Subtle 3D Perspective Architectural Dot-Matrix Floor Plane
+        const dotCount = 260;
+        const dotPositions = new Float32Array(dotCount * 3);
+        let idx = 0;
+        for (let gx = -9; gx <= 9; gx += 1.4) {
+          for (let gz = -9; gz <= 9; gz += 1.4) {
+            if (idx < dotCount * 3) {
+              dotPositions[idx++] = gx;
+              dotPositions[idx++] = -2.35;
+              dotPositions[idx++] = gz;
+            }
+          }
+        }
+        const dotGeo = new THREE.BufferGeometry();
+        dotGeo.setAttribute('position', new THREE.BufferAttribute(dotPositions, 3));
+        const dotMat = new THREE.PointsMaterial({
+          color: 0x71717a,
+          size: 0.038,
+          transparent: true,
+          opacity: 0.55,
+        });
+        const floorDots = new THREE.Points(dotGeo, dotMat);
+        scene.add(floorDots);
+
+        // Root Group for Bot + Orbital Architecture
+        const masterGroup = new THREE.Group();
+        scene.add(masterGroup);
+
+        // Bot Assembly Group
+        const botGroup = new THREE.Group();
+        masterGroup.add(botGroup);
+
+        // 1. Smooth Rounded Ceramic Capsule Body/Head (Lathe / Sphere-Cylinder Composite)
+        const capsuleRadius = 1.08;
+        const capsuleLength = 0.65;
+
+        const bodyCylinder = new THREE.Mesh(
+          new THREE.CylinderGeometry(capsuleRadius, capsuleRadius * 0.94, capsuleLength, 48),
+          matteCeramicMat
+        );
+        botGroup.add(bodyCylinder);
+
+        const topDome = new THREE.Mesh(
+          new THREE.SphereGeometry(capsuleRadius, 48, 32, 0, Math.PI * 2, 0, Math.PI / 2),
+          matteCeramicMat
+        );
+        topDome.position.y = capsuleLength / 2;
+        botGroup.add(topDome);
+
+        const bottomDome = new THREE.Mesh(
+          new THREE.SphereGeometry(capsuleRadius * 0.94, 48, 32, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2),
+          matteCeramicMat
+        );
+        bottomDome.position.y = -capsuleLength / 2;
+        botGroup.add(bottomDome);
+
+        // Precision Brushed Titanium Equator Seam & Visor Bezel
+        const visorBezel = new THREE.Mesh(
+          new THREE.TorusGeometry(0.84, 0.042, 24, 64),
+          brushedTitaniumMat
+        );
+        visorBezel.scale.set(1.06, 0.72, 1.0);
+        visorBezel.position.set(0, 0.14, 0.84);
+        visorBezel.rotation.x = -0.06;
+        botGroup.add(visorBezel);
+
+        // Curved Smoked-Glass OLED Visor Face
+        const visorScreen = new THREE.Mesh(
+          new THREE.SphereGeometry(0.86, 40, 32),
+          smokedGlassMat
+        );
+        visorScreen.scale.set(1.02, 0.69, 0.42);
+        visorScreen.position.set(0, 0.14, 0.76);
+        botGroup.add(visorScreen);
+
+        // 2. Expressive OLED Visor Eyes (Pill-Shaped Eyes + Happy Arcs + Audio Wave Bar)
+        const eyeAssembly = new THREE.Group();
+        eyeAssembly.position.set(0, 0.15, 1.11);
+        botGroup.add(eyeAssembly);
+
+        function createPillEyeMesh() {
+          const group = new THREE.Group();
+          const mid = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.24, 0.03), oledWhiteMat);
+          const topCap = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.03, 20), oledWhiteMat);
+          topCap.rotation.x = Math.PI / 2;
+          topCap.position.y = 0.12;
+          const botCap = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.03, 20), oledWhiteMat);
+          botCap.rotation.x = Math.PI / 2;
+          botCap.position.y = -0.12;
+          group.add(mid, topCap, botCap);
+          return group;
+        }
+
+        const leftEye = createPillEyeMesh();
+        leftEye.position.set(-0.31, 0, 0);
+        eyeAssembly.add(leftEye);
+
+        const rightEye = createPillEyeMesh();
+        rightEye.position.set(0.31, 0, 0);
+        eyeAssembly.add(rightEye);
+
+        // Happy Curved Arcs (^ ^) shown when clicked or in Pulse mode
+        const happyArcGeo = new THREE.TorusGeometry(0.11, 0.026, 16, 32, Math.PI);
+        const leftHappyArc = new THREE.Mesh(happyArcGeo, oledWhiteMat);
+        leftHappyArc.position.set(-0.31, -0.02, 0.01);
+        leftHappyArc.visible = false;
+        eyeAssembly.add(leftHappyArc);
+
+        const rightHappyArc = new THREE.Mesh(happyArcGeo, oledWhiteMat);
+        rightHappyArc.position.set(0.31, -0.02, 0.01);
+        rightHappyArc.visible = false;
+        eyeAssembly.add(rightHappyArc);
+
+        // Minimalist OLED Audio-Wave Bar at bottom of visor
+        const waveBars = [];
+        const barCount = 5;
+        for (let b = 0; b < barCount; b++) {
+          const bar = new THREE.Mesh(
+            new THREE.BoxGeometry(0.036, 0.05, 0.02),
+            softSilverGlowMat
+          );
+          bar.position.set((b - 2) * 0.075, -0.24, -0.02);
+          eyeAssembly.add(bar);
+          waveBars.push(bar);
+        }
+
+        // 3. Brushed-Titanium Acoustic Ear-Pods (Braun / Apple Studio aesthetic)
+        function createAcousticEarPod(sideSign) {
+          const podGroup = new THREE.Group();
+          const outerCup = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.36, 0.34, 0.22, 36),
+            brushedTitaniumMat
+          );
+          outerCup.rotation.z = Math.PI / 2;
+
+          const innerRing = new THREE.Mesh(
+            new THREE.TorusGeometry(0.26, 0.024, 16, 36),
+            softSilverGlowMat
+          );
+          innerRing.rotation.y = Math.PI / 2;
+          innerRing.position.x = sideSign * 0.115;
+
+          const capCenter = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.22, 0.22, 0.04, 32),
+            darkTitaniumMat
+          );
+          capCenter.rotation.z = Math.PI / 2;
+          capCenter.position.x = sideSign * 0.105;
+
+          podGroup.add(outerCup, innerRing, capCenter);
+          podGroup.position.set(sideSign * 1.12, 0.12, 0.02);
+          return podGroup;
+        }
+
+        const leftEarPod = createAcousticEarPod(-1);
+        const rightEarPod = createAcousticEarPod(1);
+        botGroup.add(leftEarPod, rightEarPod);
+
+        // 4. Floating Magnetic Hover Thruster & White-Silver Plasma Ring Underneath
+        const thrusterNozzle = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.46, 0.32, 0.18, 36),
+          darkTitaniumMat
+        );
+        thrusterNozzle.position.set(0, -1.28, 0);
+        botGroup.add(thrusterNozzle);
+
+        const plasmaRingPrimary = new THREE.Mesh(
+          new THREE.TorusGeometry(0.42, 0.024, 16, 48),
+          oledWhiteMat
+        );
+        plasmaRingPrimary.rotation.x = Math.PI / 2;
+        plasmaRingPrimary.position.set(0, -1.42, 0);
+        botGroup.add(plasmaRingPrimary);
+
+        const plasmaRingSecondary = new THREE.Mesh(
+          new THREE.TorusGeometry(0.62, 0.014, 16, 48),
+          softSilverGlowMat
+        );
+        plasmaRingSecondary.rotation.x = Math.PI / 2;
+        plasmaRingSecondary.position.set(0, -1.58, 0);
+        botGroup.add(plasmaRingSecondary);
+
+        // 5. Articulated Floating Rounded-Capsule Hands
+        function createCapsuleHand() {
+          const handGroup = new THREE.Group();
+          const cyl = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.15, 0.15, 0.28, 24),
+            brushedTitaniumMat
+          );
+          const topSph = new THREE.Mesh(new THREE.SphereGeometry(0.15, 24, 16), brushedTitaniumMat);
+          topSph.position.y = 0.14;
+          const botSph = new THREE.Mesh(new THREE.SphereGeometry(0.15, 24, 16), brushedTitaniumMat);
+          botSph.position.y = -0.14;
+          const jointRing = new THREE.Mesh(
+            new THREE.TorusGeometry(0.155, 0.016, 12, 28),
+            oledWhiteMat
+          );
+          jointRing.rotation.x = Math.PI / 2;
+          handGroup.add(cyl, topSph, botSph, jointRing);
+          return handGroup;
+        }
+
+        const leftHand = createCapsuleHand();
+        leftHand.position.set(-1.55, -0.45, 0.35);
+        leftHand.rotation.z = 0.28;
+        botGroup.add(leftHand);
+
+        const rightHand = createCapsuleHand();
+        rightHand.position.set(1.55, -0.45, 0.35);
+        rightHand.rotation.z = -0.28;
+        botGroup.add(rightHand);
+
+        // 6. Architectural Precision Rings & Orbiting Chrome Polyhedra/Capsules
+        const precisionRingOuter = new THREE.Mesh(
+          new THREE.TorusGeometry(2.35, 0.016, 16, 96),
+          brushedTitaniumMat
+        );
+        precisionRingOuter.rotation.x = Math.PI / 2.45;
+        precisionRingOuter.rotation.y = 0.22;
+        masterGroup.add(precisionRingOuter);
+
+        const precisionRingInner = new THREE.Mesh(
+          new THREE.TorusGeometry(1.98, 0.012, 16, 96),
+          softSilverGlowMat
+        );
+        precisionRingInner.rotation.x = -Math.PI / 2.9;
+        precisionRingInner.rotation.y = -0.28;
+        masterGroup.add(precisionRingInner);
+
+        // Orbiting Minimalist Chrome Polyhedra & Micro-Capsules
+        const orbiters = [];
+        const orbiterCount = 6;
+        for (let i = 0; i < orbiterCount; i++) {
+          const geo = i % 2 === 0
+            ? new THREE.OctahedronGeometry(0.09, 0)
+            : new THREE.IcosahedronGeometry(0.08, 0);
+          const mesh = new THREE.Mesh(geo, i % 2 === 0 ? brushedTitaniumMat : oledWhiteMat);
+          mesh.userData = {
+            angle: (i / orbiterCount) * Math.PI * 2,
+            radius: 2.05 + (i % 2) * 0.32,
+            speed: 0.32 + (i % 3) * 0.12,
+            yOffset: ((i % 3) - 1) * 0.55,
+          };
+          masterGroup.add(mesh);
+          orbiters.push(mesh);
+        }
+
+        // Interactive State: Cursor Tracking, Dragging, Blinking, Modes & Scroll Transform
+        let currentMode = 'orbit'; // 'orbit' | 'focus' | 'pulse'
+        let targetLookX = 0;
+        let targetLookY = 0;
+        let isDragging = false;
+        let prevX = 0;
+        let dragYaw = 0;
+        let happyTimer = 0;
+        let blinkProgress = 0;
+        let nextBlinkTime = 2.5;
+
+        function updateCursorLook(clientX, clientY) {
+          const nx = (clientX / window.innerWidth) * 2 - 1;
+          const ny = (clientY / window.innerHeight) * 2 - 1;
+          targetLookY = nx * 0.48;
+          targetLookX = ny * 0.28;
+        }
+
+        window.addEventListener(
+          'mousemove',
+          (e) => {
+            updateCursorLook(e.clientX, e.clientY);
+            if (isDragging) {
+              dragYaw += (e.clientX - prevX) * 0.011;
+              prevX = e.clientX;
+            }
+          },
+          { passive: true }
+        );
+
+        container.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          prevX = e.clientX;
+        });
+
+        window.addEventListener('mouseup', () => {
+          isDragging = false;
+        });
+
+        container.addEventListener(
+          'touchstart',
+          (e) => {
+            if (e.touches.length > 0) {
+              isDragging = true;
+              prevX = e.touches[0].clientX;
+              updateCursorLook(e.touches[0].clientX, e.touches[0].clientY);
+            }
+          },
+          { passive: true }
+        );
+
+        container.addEventListener(
+          'touchmove',
+          (e) => {
+            if (e.touches.length > 0) {
+              const tx = e.touches[0].clientX;
+              updateCursorLook(tx, e.touches[0].clientY);
+              if (isDragging) {
+                dragYaw += (tx - prevX) * 0.011;
+                prevX = tx;
+              }
+            }
+          },
+          { passive: true }
+        );
+
+        container.addEventListener('touchend', () => {
+          isDragging = false;
+        });
+
+        // Click on Bot Canvas triggers happy arc expression & audio wave pulse
+        container.addEventListener('click', () => {
+          happyTimer = 1.6;
+        });
+
+        // Bot Mode Pill Controls ("Orbit", "Focus", "Pulse")
+        const modeButtons = document.querySelectorAll('.bot-mode-btn');
+        modeButtons.forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentMode = btn.getAttribute('data-bot-mode') || 'orbit';
+            modeButtons.forEach((b) => {
+              b.classList.remove('bg-white', 'text-black', 'font-semibold');
+              b.classList.add('text-zinc-400');
+            });
+            btn.classList.add('bg-white', 'text-black', 'font-semibold');
+            btn.classList.remove('text-zinc-400');
+
+            if (currentMode === 'pulse') {
+              happyTimer = 2.0;
+            } else if (currentMode === 'focus') {
+              dragYaw = 0;
+              happyTimer = 0;
+            }
+          });
+        });
+
+        function handleResize() {
+          if (!container) return;
+          width = container.clientWidth || 500;
+          height = container.clientHeight || 500;
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+          renderer.setSize(width, height);
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // Main 60fps Animation Loop
+        const clock = new THREE.Clock();
+
+        function animate() {
+          requestAnimationFrame(animate);
+          const dt = clock.getDelta();
+          const elapsed = clock.getElapsedTime();
+
+          // Scroll-driven subtle 3D camera/model transformation
+          const scrollRatio = Math.min(1, window.scrollY / 700);
+          masterGroup.rotation.z = scrollRatio * 0.14;
+          camera.position.z = 6.6 + scrollRatio * 0.65;
+
+          // Natural Periodic Eye Blinking
+          if (elapsed > nextBlinkTime && blinkProgress === 0) {
+            blinkProgress = 0.01;
+            nextBlinkTime = elapsed + 2.8 + Math.random() * 2.6;
+          }
+          if (blinkProgress > 0) {
+            blinkProgress += dt * 7.5;
+            if (blinkProgress >= Math.PI) {
+              blinkProgress = 0;
+            }
+          }
+          const blinkScaleY = blinkProgress > 0 ? Math.max(0.08, Math.cos(blinkProgress)) : 1.0;
+
+          // Happy Expression Timer Decay
+          if (happyTimer > 0) {
+            happyTimer = Math.max(0, happyTimer - dt);
+          }
+          const isHappy = happyTimer > 0 || currentMode === 'pulse';
+
+          leftEye.visible = !isHappy;
+          rightEye.visible = !isHappy;
+          leftHappyArc.visible = isHappy;
+          rightHappyArc.visible = isHappy;
+
+          if (!isHappy) {
+            leftEye.scale.y = blinkScaleY;
+            rightEye.scale.y = blinkScaleY;
+          }
+
+          // Smooth Organic Floating Levitation
+          const floatAmp = currentMode === 'focus' ? 0.05 : 0.14;
+          const floatSpeed = currentMode === 'pulse' ? 2.6 : 1.65;
+          botGroup.position.y = Math.sin(elapsed * floatSpeed) * floatAmp;
+
+          // Smooth Head/Body Orientation Tracking Cursor
+          const modeYawAuto = currentMode === 'orbit' ? Math.sin(elapsed * 0.55) * 0.16 : 0;
+          const desiredYaw = targetLookY + dragYaw + modeYawAuto;
+          const desiredPitch = targetLookX;
+
+          botGroup.rotation.y += (desiredYaw - botGroup.rotation.y) * 0.075;
+          botGroup.rotation.x += (desiredPitch - botGroup.rotation.x) * 0.075;
+
+          // Subtle OLED Eye Parallax Inside Visor
+          eyeAssembly.position.x = Math.sin(botGroup.rotation.y) * 0.06;
+          eyeAssembly.position.y = 0.15 - Math.sin(botGroup.rotation.x) * 0.05;
+
+          // OLED Audio-Wave Equalizer Bar Animation
+          for (let b = 0; b < waveBars.length; b++) {
+            const waveSpeed = isHappy ? 9.5 : 3.2;
+            const waveAmp = isHappy ? 1.9 : 0.65;
+            const sY = 0.55 + Math.abs(Math.sin(elapsed * waveSpeed + b * 0.9)) * waveAmp;
+            waveBars[b].scale.y = sY;
+          }
+
+          // Articulated Capsule Hands Gentle Gesture
+          leftHand.position.y = -0.45 + Math.sin(elapsed * 2.0 + 0.5) * 0.09 + (isHappy ? 0.18 : 0);
+          rightHand.position.y = -0.45 + Math.cos(elapsed * 2.0 + 0.5) * 0.09 + (isHappy ? 0.18 : 0);
+          leftHand.rotation.z = 0.28 + Math.sin(elapsed * 1.8) * 0.08 + (isHappy ? 0.22 : 0);
+          rightHand.rotation.z = -0.28 - Math.sin(elapsed * 1.8) * 0.08 - (isHappy ? 0.22 : 0);
+
+          // Magnetic Plasma Hover Thruster Pulse
+          const plasmaPulse = 1 + Math.sin(elapsed * 4.5) * 0.06 + (isHappy ? 0.14 : 0);
+          plasmaRingPrimary.scale.setScalar(plasmaPulse);
+          plasmaRingSecondary.scale.setScalar(1 + Math.cos(elapsed * 3.8) * 0.08);
+          oledWhiteMat.emissiveIntensity = isHappy ? 3.2 : 2.2 + Math.sin(elapsed * 3) * 0.25;
+
+          // Precision Rings & Orbiting Chrome Polyhedra
+          const ringSpeedMult = currentMode === 'pulse' ? 2.4 : currentMode === 'focus' ? 0.35 : 1.0;
+          precisionRingOuter.rotation.z = elapsed * 0.28 * ringSpeedMult;
+          precisionRingInner.rotation.z = -elapsed * 0.22 * ringSpeedMult;
+
+          for (let i = 0; i < orbiters.length; i++) {
+            const orb = orbiters[i];
+            const a = orb.userData.angle + elapsed * orb.userData.speed * ringSpeedMult;
+            orb.position.x = Math.cos(a) * orb.userData.radius;
+            orb.position.z = Math.sin(a) * orb.userData.radius;
+            orb.position.y = orb.userData.yOffset + Math.sin(elapsed * 1.8 + i) * 0.1;
+            orb.rotation.x = elapsed * 1.1;
+            orb.rotation.y = elapsed * 0.9;
+          }
+
+          renderer.render(scene, camera);
+        }
+
+        animate();
+      }
+
+      /* =========================================================================
+       * 6. INITIALIZE ALL MODULES ON WINDOW LOAD
+       * ========================================================================= */
+      window.addEventListener('load', () => {
+        renderSkills('all');
+        attachTiltListeners();
+        updateScrollParallax();
+        initStarfield();
+        initAeroOrbBot();
+      });
+    })();
+  </script>
 </body>
 </html>
